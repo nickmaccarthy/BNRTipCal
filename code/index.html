@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <title>BNR Tip Cal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/js/tipcal.js"></script>
+</head> 
+
+<body> 
+  <div class="container">
+    <div class="jumbotron">
+        <div class="row"> 
+            <div class="col-md-12"> 
+            <h1 class="display-3 text-center">BNR Tip Cal</h1> 
+            </div> 
+        </div> 
+
+        <div class="row"> <div class="col-md-8"> &nbsp; </div> </div> 
+
+        <div class="row">            
+            <div class="col-md-12"> 
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" class="form-control" id="amount" placeholder="Check Amount">
+                </div>
+            </div>
+        </div>
+
+        <div class="row"> <div class="col-md-12"> &nbsp; </div> </div> 
+
+        <div class="row">  
+            <p class="text-center">Tip Percentage</p>
+            <div class="set_amounts"> 
+                <div class="col-md-3"> 
+                    <button type="button" class="btn btn-default btn-lg btn-block tip_amt">15%</button>
+                </div>
+                <div class="col-md-3">   
+                    <button type="button" class="btn btn-default btn-lg btn-block tip_amt active">20%</button>
+                </div>
+                <div class="col-md-3">   
+                    <button type="button" class="btn btn-default btn-lg btn-block tip_amt">25%</button>
+                </div> 
+            </div> 
+            <div class="col-md-3">   
+                <button type="button" class="btn btn-default btn-lg btn-block custom_amt">Custom Amount</button>
+                <div class="row"> 
+                    <div class="col-md-8 hidden" id="custom_tip_amt_div" > 
+                        <input type="number" class="form-control custom_tip_amt" placeholder="Custom Tip Amount"></input> 
+                    </div>
+            </div> 
+            </div> 
+    
+        </div>
+
+        <div class="row"> <div class="col-md-12"> &nbsp; </div> </div>
+
+        <div class="row">
+            <div class="col-md-4"> 
+                <p><b>Split by:</b><p>
+                <input type="number" class="form-control" id="split_by" placeholder="1"></input>
+            </div> 
+        </div>
+
+        <div class="row"> 
+            <div class="col-md-6 text-center hidden" id="totals_div"> 
+                <h4>Tip Percentage: <span id="tip_percentage"></span>% </h4> 
+                <h4>Tip Amount: $<span id="tip_amount"></span> </h4>
+                <h4>Total: <strong>$<span id="total_amount"></span></strong> </h4>
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="col-md-6 text-center hidden" id="split_div">
+                <p><b>Split By:</b></p>
+                <h4>Per Person Tip Amt: $<span id="per_person_tip_amt"</span></h4>
+                <h4>Per Person Total: $<span id="per_person_total"></span></h4>
+            </div>
+
+        </div>
+    </div> 
+  </div>
+</body>
+
+</html>
