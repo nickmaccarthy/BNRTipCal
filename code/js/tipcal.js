@@ -16,12 +16,15 @@ function updateTotal(tip_percentage) {
 
 function updateSplitBy() {
     var split_by = $("#split_by").val();
-    var total_amount = $( "#total_amount" ).text();
-    var tip_amount = $( "#tip_amount" ).text();
+    if ($.isNumeric( split_by )) {
+        var total_amount = $( "#total_amount" ).text();
+        var tip_amount = $( "#tip_amount" ).text();
 
-    $( "#per_person_tip_amt" ).text( (+tip_amount / +split_by).toFixed(2) );
-    $( "#per_person_total" ).text( (+total_amount / +split_by).toFixed(2) );
-    $( "#split_div" ).removeClass('hidden');
+        $( "#per_person_tip_amt" ).text( (+tip_amount / +split_by).toFixed(2) );
+        $( "#per_person_total" ).text( (+total_amount / +split_by).toFixed(2) );
+        $( "#split_div" ).removeClass('hidden');
+    }
+
 }
 
 $(document).ready(function() {
