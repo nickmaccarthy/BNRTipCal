@@ -16,6 +16,9 @@ function updateTotal(tip_percentage) {
     $( "#tip_percentage" ).text(tip_percentage);
     $( "#total_amount" ).text(total_amount);
     $( "#totals_div" ).removeClass('hidden'); 
+    if (roundUp) {
+        $( "#roundUp_div" ) .removeClass('hidden');
+    }
     updateSplitBy();
 }
 
