@@ -1,15 +1,24 @@
-function calculateTip(bill_amount, tip_amount) {
-    return ((bill_amount * tip_amount) / 100).toFixed(2); 
+function calculateTip(bill_amount, tip_amount, roundUp=false) {
+    tip_amount = ((bill_amount * tip_amount) / 100).toFixed(2); 
+    if (roundUp == true) {
+        tip_amount = Math.ceil(tip_amount);
+    }
+    return tip_amount;
 }
 
 function updateTotal(tip_percentage) {
     var bill_amount = $("#amount").val();
-    var tip_amount = calculateTip(bill_amount, tip_percentage);
+    var roundUp = $("#roundUp").is(":checked") ? true : false;
+    var tip_amount = calculateTip(bill_amount, tip_percentage, roundUp);
     var total_amount = (+bill_amount + +tip_amount).toFixed(2);
+
     $( "#tip_amount" ).text(tip_amount); 
     $( "#tip_percentage" ).text(tip_percentage);
     $( "#total_amount" ).text(total_amount);
     $( "#totals_div" ).removeClass('hidden'); 
+    if (roundUp) {
+        $( "#roundUp_div" ) .removeClass('hidden');
+    }
     updateSplitBy();
 }
 
@@ -55,6 +64,11 @@ $(document).ready(function() {
         var tip_percentage = $( ".active" ).text().replace("%", "");
         updateTotal(tip_percentage);
         updateSplitBy();
+    });
+
+    $( "#roundUp" ).click(function() {
+        var tip_percentage = $( ".active" ).text().replace("%", "");
+        updateTotal(tip_percentage); 
     });
 
 });

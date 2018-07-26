@@ -22,6 +22,26 @@
         <div class="row"> <div class="col-md-8"> &nbsp; </div> </div> 
 
         <div class="row">            
+            <!-- Hidden display ammounts -->
+            <div class="row"> 
+                <div class="col-md-6 text-center hidden" id="totals_div"> 
+                    <h4>Tip Percentage: <span id="tip_percentage"></span>% </h4> 
+                    <h4>Tip Amount: $<span id="tip_amount"></span> </h4>
+                    <h4>Total: <strong>$<span id="total_amount"></span></strong> </h4>
+                    <div class="hidden" id="roundUp_div">
+                        <p class="small">Note: Tip rounded up to the nearst dollar..</p>
+                    </div>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-6 text-center hidden" id="split_div">
+                    <p><b>Split By:</b></p>
+                    <h4>Per Person Tip Amt: $<span id="per_person_tip_amt"</span></h4>
+                    <h4>Per Person Total: $<span id="per_person_total"></span></h4>
+                </div>
+            </div>
+            <!-- End Hidden display ammounts -->
+
             <div class="col-md-12"> 
                 <div class="input-group">
                     <span class="input-group-addon">$</span>
@@ -56,6 +76,16 @@
     
         </div>
 
+        <!-- Round Up -->
+        <div class="row">
+            <div class="col-md-3">
+                <label class="form-check-label" for="roundUp">
+                    Round Up Tip (to nearest dollar):
+                </label>
+                <input class="form-check-input" type="checkbox" checked="true" value="" id="roundUp" />
+            </div>
+        </div>
+
         <div class="row"> <div class="col-md-12"> &nbsp; </div> </div>
 
         <div class="row">
@@ -65,22 +95,7 @@
             </div> 
         </div>
 
-        <div class="row"> 
-            <div class="col-md-6 text-center hidden" id="totals_div"> 
-                <h4>Tip Percentage: <span id="tip_percentage"></span>% </h4> 
-                <h4>Tip Amount: $<span id="tip_amount"></span> </h4>
-                <h4>Total: <strong>$<span id="total_amount"></span></strong> </h4>
-            </div>
-        </div> 
 
-        <div class="row">
-            <div class="col-md-6 text-center hidden" id="split_div">
-                <p><b>Split By:</b></p>
-                <h4>Per Person Tip Amt: $<span id="per_person_tip_amt"</span></h4>
-                <h4>Per Person Total: $<span id="per_person_total"></span></h4>
-            </div>
-
-        </div>
     </div> 
   </div>
 </body>
